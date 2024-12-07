@@ -21,7 +21,8 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 
 // Database Connection
-const dbUrl = process.env.DATABASE_URL || 'mongodb://localhost:27017/mydb'; // Default for testing
+const dbUrl = process.env.DATABASE_URL 
+// || 'mongodb://localhost:27017/mydb'; // Default for testing
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to Mongoose'))
     .catch(err => console.error('Could not connect to Mongoose:', err));
@@ -31,7 +32,8 @@ const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
 // Start the Server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT 
+// || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
